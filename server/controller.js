@@ -232,9 +232,9 @@ module.exports = {
     },
 
     createCity: (req, res) => {
-        let { name, rating, city_id } = req.body;
-        sequelize.query(`INSERT INTO cities (name, rating, city_id)
-        VALUES (${name}, ${rating}, ${city_id})`)
+        let { name, rating, country_id } = req.body;
+        sequelize.query(`INSERT INTO cities (name, rating, country_id)
+        VALUES (${name}, ${rating}, ${country_id})`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err));
     },
